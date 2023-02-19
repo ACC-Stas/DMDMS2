@@ -1,0 +1,7 @@
+.flatpak-builder/
+.idea/
+build/
+
+.DS_Store
+Thumbs.db
+*.iml
