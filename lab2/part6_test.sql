@@ -1,0 +1,11 @@
+INSERT INTO STUDENTS(name, group_id)
+VALUES
+    ('BALERA', 2);
+
+INSERT INTO GROUPS(id, name, c_val)
+VALUES
+    (2, 'GROUP', 0);
+
+
+SELECT * FROM STUDENTS;
+SELECT * FROM GROUPS;
