@@ -50,4 +50,11 @@ CREATE TABLE fk_table
     parent VARCHAR2(100)
 );
 
+CREATE TABLE dev.cycled ( 
+    id NUMBER(10) not null, 
+    
+    CONSTRAINT pk PRIMARY KEY (id),
+    CONSTRAINT fk FOREIGN KEY (id) REFERENCES dev.examples(id)
+);
+
 
