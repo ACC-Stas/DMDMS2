@@ -16,10 +16,6 @@ begin
             WHERE c.constraint_type = 'R'
               AND a.table_name = schema_table.name;
 
-            IF SQL%ROWCOUNT = 0 THEN
-                dbms_output.put_line(schema_table.name);
-            END IF;
-
         END LOOP;
 
     FOR fk_cur IN (
@@ -32,7 +28,9 @@ begin
         )
         LOOP
             IF fk_cur.CONNECT_BY_ISYCLE_3 = 0 THEN
-                dbms_output.put_line(fk_cur.CHILD);
+                UPDATE DDL_TABLE
+                SET PRIORITY = fk_cur.level_3
+                WHERE DDL_TABLE.TABLE_NAME = fk_cur.CHILD;
             ELSE
                 dbms_output.put_line('CYCLE IN TABLE' || fk_cur.CHILD);
             END IF;
