@@ -52,26 +52,11 @@ CREATE TABLE dev.one
     CONSTRAINT one_fk FOREIGN KEY (id_2) REFERENCES dev.two(id)
 );
 
-CREATE TABLE fk_table
-(
-    id     NUMBER,
-    child  VARCHAR2(100),
-    parent VARCHAR2(100)
-);
-
 CREATE TABLE dev.cycled
 (
     id NUMBER(10) not null,
 
     CONSTRAINT pk PRIMARY KEY (id),
     CONSTRAINT fk FOREIGN KEY (id) REFERENCES dev.cycled (id)
-);
-
-CREATE TABLE ddl_table
-(
-    table_name VARCHAR2(100),
-    ddl_script VARCHAR2(3000),
-    type       VARCHAR2(100),
-    priority   NUMBER(10) DEFAULT 100000
 );
 

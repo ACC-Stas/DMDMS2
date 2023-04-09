@@ -1,0 +1,8 @@
+CREATE OR REPLACE Function dev.FU1(a in VARCHAR2)
+    return NUMBER
+    IS
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(a);
+    RETURN 5;
+END;
+
