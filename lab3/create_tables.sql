@@ -24,7 +24,7 @@ CREATE TABLE prod.smth3
 (
     id         NUMBER       not null,
     some_field VARCHAR2(59) not null,
-    CONSTRAINT smth1_pk PRIMARY KEY (id)
+    CONSTRAINT smth3_pk PRIMARY KEY (id)
 );
 
 CREATE TABLE dev.three
