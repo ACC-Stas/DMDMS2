@@ -1,0 +1,5 @@
+DECLARE
+    INPUT_DATA VARCHAR2(3000) := '<Operation><Type>DROP</Type><Table>XMLTEST1</Table></Operation>';
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(PARSE(INPUT_DATA));
+END;
