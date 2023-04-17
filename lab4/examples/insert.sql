@@ -3,7 +3,6 @@ DECLARE
     <Type>INSERT</Type>
     <Table>Table1</Table>
     <Columns>
-        <Column>XMLTEST1.ID</Column>
         <Column>XMLTEST2.ID</Column>
     </Columns>
     <Operation>

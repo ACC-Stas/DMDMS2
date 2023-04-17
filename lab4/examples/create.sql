@@ -1,0 +1,41 @@
+DECLARE
+    INPUT_DATA VARCHAR2(3000) := '
+    <Operation>
+        <Type>CREATE</Type>
+        <Table>SOME_TABLE</Table>
+        <Columns>
+            <Column>
+                <Name>COL1</Name>
+                <Type>NUMBER</Type>
+                <Constraints>
+                    <Constraint>NOT NULL</Constraint>
+                </Constraints>
+            </Column>
+            <Column>
+                <Name>COL2</Name>
+                <Type>VARCHAR2(100)</Type>
+                <Constraints>
+                    <Constraint>NOT NULL</Constraint>
+                </Constraints>
+            </Column>
+        </Columns>
+        <TableConstraints>
+            <Primary>
+                <Columns>
+                    <Column>COL2</Column>
+                </Columns>
+            </Primary>
+            <ForeignKey>
+                <ChildColumns>
+                    <Column>COL1</Column>
+                </ChildColumns>
+                <Parent>SOME_TABLE2</Parent>
+                <ParentColumns>
+                    <Column>ID</Column>
+                </ParentColumns>
+            </ForeignKey>
+        </TableConstraints>
+    </Operation>';
+BEGIN
+    DBMS_OUTPUT.PUT_LINE(PARSE(INPUT_DATA));
+END;
